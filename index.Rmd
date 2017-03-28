@@ -1,0 +1,22 @@
+---
+title: "Macroeconomic Variable Forecasts"
+author: "By: Victor"
+date: "March 17, 2017"
+output: html_document
+---
+
+
+
+## Inflation
+
+Main driver for inflation in 2017 is increasing fuel prices, electricity tariff and commodity prices.
+
+
+```{r test, echo=FALSE}
+library(dygraphs)
+mydata = read.csv("inflasiYoY.csv")
+myts<-ts(mydata, frequency=12, start=c(2003,1))
+dygraph(myts, main="Inflation is Projected to Increase") %>%
+  dyAxis("y", label="Inflation YoY") %>%
+  dyRangeSelector()
+```
