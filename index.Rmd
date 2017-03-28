@@ -1,11 +1,23 @@
 ---
 title: "Macroeconomic Variable Forecasts"
-author: "By: Victor"
+author: "By: Victor Matindas"
 date: "March 17, 2017"
 output: html_document
 ---
 
 
+## Liquidity
+
+The liquidity is trending down due to global reflation.
+
+```{r test1, echo=FALSE}
+library(dygraphs)
+liquidity = read.csv("liquidity.csv")
+myts2 <- ts(liquidity, start=c(1991, 1), end=c(2022, 11), frequency=12)
+dygraph(myts2, main = "National Liquidity (M2 YoY)") %>%
+dySeries(c("lwr", "fit", "upr"), label = "M2 YoY") %>%
+dyRangeSelector()
+```
 
 ## Inflation
 
